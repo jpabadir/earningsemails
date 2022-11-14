@@ -2,14 +2,16 @@ import React from "react";
 import CIK from './CIK.json';
 
 function NetIncomeLoss() {
+    console.log(CIK)
     return (
       <div>
         <div>
-            { CIK.fields.map(post => {
+            {CIK.fields}
+            {/* { CIK.fields.map(post => {
                 return(
                     <p>{ post.fields }</p>
                 )
-            })}
+            })} */}
         </div>
       </div>
     );
