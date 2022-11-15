@@ -6,12 +6,17 @@ function NetIncomeLoss() {
     return (
       <div>
         <div>
-            {CIK.fields}
-            {/* { CIK.fields.map(post => {
-                return(
-                    <p>{ post.fields }</p>
-                )
-            })} */}
+          {/* {INPUT BOX} */}
+          <input name="searchTicker" type='text' id="searchTicker" />
+          <input type='button' value='Search'></input>
+        </div>
+        <div>
+          {/* {{CIK.fields[1]}} */}
+           { CIK.fields.map( list => {
+              return(
+                  <p key={list}>{ list }</p>
+              )
+          })}
         </div>
       </div>
     );
