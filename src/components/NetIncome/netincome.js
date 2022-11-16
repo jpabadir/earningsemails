@@ -3,16 +3,17 @@ import CIK from "./CIK.json";
 import { useState } from "react";
 
 function NetIncomeLoss() {
-  const [ticker, tickerValue] = useState("");
-  function clickToGetTicker() {
-    if (CIK.hasOwnProperty("data")) {
-      console.log("Key Found!");
+  const [ticker, setTicker] = useState("");
+  const [cik, setCik] = useState("");
+
+  function clickToGetTicker() {    
+    if(CIK[ticker]) {
+      setCik(CIK[ticker])
     }
     else {
-      console.log("Key not Found")
+      alert("Not valid")
     }
   }
-  //console.log(CIK)
   return (
     <div>
       <div>
@@ -22,15 +23,15 @@ function NetIncomeLoss() {
           type="text"
           id="searchTicker"
           onChange={(value) => {
-            tickerValue(value.target.value);
+            setTicker(value.target.value);
           }}
         />
         <input type="button" value="Search" onClick={clickToGetTicker} />
+        <p>{cik}</p>
       </div>
       <div>
         {/* {{CIK.fields[1]}} */}
         {/* {CIK.fields.map((list) => {
-          return <p key={list}>{list}</p>;
         })} */}
       </div>
     </div>
