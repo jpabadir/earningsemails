@@ -4,15 +4,16 @@ import { useState } from "react";
 
 function NetIncomeLoss() {
   const [ticker, setTicker] = useState("");
-  function clickToGetTicker() {
-    if (CIK.hasOwnProperty("data")) {
-      console.log("Key Found!");
+  const [cik, setCik] = useState("");
+
+  function clickToGetTicker() {    
+    if(CIK[ticker]) {
+      setCik(CIK[ticker])
     }
     else {
-      console.log("Key not Found")
+      alert("Not valid")
     }
   }
-  //console.log(CIK)
   return (
     <div>
       <div>
@@ -26,12 +27,12 @@ function NetIncomeLoss() {
           }}
         />
         <input type="button" value="Search" onClick={clickToGetTicker} />
+        <p>{cik}</p>
       </div>
       <div>
         {/* {{CIK.fields[1]}} */}
-        {CIK.fields.map((list) => {
-          return <p key={list}>{list}</p>;
-        })}
+        {/* {CIK.fields.map((list) => {
+        })} */}
       </div>
     </div>
   );
