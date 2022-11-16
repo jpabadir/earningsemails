@@ -3,7 +3,7 @@ import CIK from "./CIK.json";
 import { useState } from "react";
 
 function NetIncomeLoss() {
-  const [ticker, tickerValue] = useState("");
+  const [ticker, setTicker] = useState("");
   function clickToGetTicker() {
     if (CIK.hasOwnProperty("data")) {
       console.log("Key Found!");
@@ -22,7 +22,7 @@ function NetIncomeLoss() {
           type="text"
           id="searchTicker"
           onChange={(value) => {
-            tickerValue(value.target.value);
+            setTicker(value.target.value);
           }}
         />
         <input type="button" value="Search" onClick={clickToGetTicker} />
