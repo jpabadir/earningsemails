@@ -29,9 +29,9 @@ function NetIncomeLoss() {
       </div>
       <div>
         {/* {{CIK.fields[1]}} */}
-        {CIK.fields.map((list) => {
+        {/* {CIK.fields.map((list) => {
           return <p key={list}>{list}</p>;
-        })}
+        })} */}
       </div>
     </div>
   );
