@@ -5,7 +5,12 @@ import { useState } from "react";
 function NetIncomeLoss() {
   const [ticker, tickerValue] = useState("");
   function clickToGetTicker() {
-    console.log(ticker);
+    if (CIK.hasOwnProperty("data")) {
+      console.log("Key Found!");
+    }
+    else {
+      console.log("Key not Found")
+    }
   }
   //console.log(CIK)
   return (
