@@ -5,17 +5,23 @@ import { useState } from "react";
 function NetIncomeLoss() {
   const [ticker, setTicker] = useState("");
   const [cik, setCik] = useState("");
+  //const [data, setData] = useState([])
+
 
   function clickToGetTicker() {
     if (CIK[ticker]) {
       setCik(("" + CIK[ticker]).padStart(10, '0'))
       console.log(cik)
-      // var http = new XMLHttpRequest();
-      // http.open("GET", "https://data.sec.gov/api/xbrl/companyconcept/CIK" + cik + "/us-gaap/NetIncomeLoss.json", true)
-      // http.setRequestHeader("Access-Control-Allow-Origin: *")
-      // http.send();  
-      // http.onload = () => console.log(http.responseText)
-    } 
+      // const fetchLocation = async () => {
+        // await fetch("https://data.sec.gov/api/xbrl/companyconcept/CIK" + cik + "/us-gaap/NetIncomeLoss.json")
+          // .then((res) => res.json())
+          // .then((data) => {
+            // setData(data)
+            // console.log(data)
+          // })
+      // }
+      // fetchLocation()    
+    }
     else {
       alert("Not valid");
     }
