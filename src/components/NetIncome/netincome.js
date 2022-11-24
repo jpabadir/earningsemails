@@ -3,26 +3,31 @@ import CIK from "./CIK.json";
 import { useState } from "react";
 
 function NetIncomeLoss() {
-  const [ticker, setTicker] = useState("");
+  const [ticker, setTicker] = useState("AAPL");
   const [cik, setCik] = useState("");
-  //const [data, setData] = useState([])
 
+  function fetchLocation() {
+    fetch(
+      "https://data.sec.gov/api/xbrl/companyconcept/CIK" +
+        cik +
+        "/us-gaap/NetIncomeLoss.json",
+      {
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    ).then((response) => console.log(response)); 
+    //.then((json) => console.log(json)); 
+  }
 
   function clickToGetTicker() {
     if (CIK[ticker]) {
-      setCik(("" + CIK[ticker]).padStart(10, '0'))
-      console.log(cik)
-      // const fetchLocation = async () => {
-        // await fetch("https://data.sec.gov/api/xbrl/companyconcept/CIK" + cik + "/us-gaap/NetIncomeLoss.json")
-          // .then((res) => res.json())
-          // .then((data) => {
-            // setData(data)
-            // console.log(data)
-          // })
-      // }
-      // fetchLocation()    
-    }
-    else {
+      setCik(("" + CIK[ticker]).padStart(10, "0"));
+      console.log(cik);
+
+      fetchLocation();
+    } else {
       alert("Not valid");
     }
   }
