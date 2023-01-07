@@ -23,6 +23,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <NetIncomeLoss />
+          <div>hey!</div>
         </header>
       </div>
     );
