@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import NetIncomeLoss from "./components/NetIncome/netincome";
 import { Component } from "react";
@@ -18,6 +17,7 @@ class App extends Component {
   componentWillMount() {
     this.callAPI();
   }
+
   render() {
     return (
       <div className="App">
