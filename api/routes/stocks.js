@@ -1221,7 +1221,8 @@ const filings = {
   ]
 }
 
-const accessionNo = '0000320193-22-000070';
+// const accessionNo = '0000320193-22-000070';
+const accessionNo = '000095017022019867';
 
 const jsonVersionOfFilings = {
   "CoverPage": {
@@ -14771,8 +14772,8 @@ router.get('/:ticker', async function (req, res, next) {
   // res.json(filings.filings.map((filing) => filing.accessionNo));
   // res.send(`${req.params.ticker}`);
 
-  // const results = await xbrlApi.xbrlToJson({ accessionNo })
-  res.json(jsonVersionOfFilings);
+  const results = await xbrlApi.xbrlToJson({ accessionNo })
+  res.json(results);
 })
 
 module.exports = router;
