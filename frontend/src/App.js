@@ -32,10 +32,10 @@ function App() {
   }
 
   function submitForm() {
-    // addDoc(collection(db, "form-submissions"), {
-    //   email: emailInput,
-    //   tickers: tickers
-    // });
+    addDoc(collection(db, "form-submissions"), {
+      email: emailInput,
+      tickers: tickers
+    });
 
     setEmailInput("");
     setTickers([]);
