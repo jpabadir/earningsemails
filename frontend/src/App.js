@@ -27,7 +27,11 @@ function App() {
   const [tickers, setTickers] = useState([]);
 
   function addTicker() {
-    if (tickerInput) setTickers([...tickers, tickerInput]);
+    if (tickers.length < 5) {
+      if (tickerInput) setTickers([...tickers, tickerInput]);
+    } else {
+      alert("Max 5 tickers for now. If you need more than that, email me at jp@northpnd.com.")
+    }
     setTickerInput("");
   }
 
