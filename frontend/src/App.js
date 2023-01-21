@@ -40,7 +40,7 @@ function App() {
     setEmailInput("");
     setTickers([]);
 
-    toast("Your info has been submitted! Make sure you also pay otherwise you won't be subscribed and we won't send you any emails.")
+    toast("Your info has been submitted! Make sure you also pay otherwise you won't be subscribed and you won't receive any emails.")
   }
 
   return (
@@ -49,31 +49,39 @@ function App() {
         <ToastContainer />
         <div style={{ minHeight: '90vh' }}>
           <h1>Welcome to earningsemails.com!</h1>
-          <h2>What is it?</h2>
-          <p>I was sick of missing earnings for stocks I follow. So I created this site. It will autmatically send you 2 emails for each earnings report:</p>
+          <h3>What is it?</h3>
+          <p>I was sick of missing earnings for <a href="https://www.jpabadir.com/investment-portfolio" target="_blank" rel="noopener noreferrer">stocks I have money in</a>, so I created this site. It will autmatically send you 2 emails for each earnings report:</p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <ol style={{ textAlign: 'left', maxWidth: '500px' }}>
-              <strong>
+              <div style={{ fontStyle: 'italic' }}>
                 <li>One email when the company announces when they'll report their next earnings, so you can put it in your calendar. Or ignore it. I don't care.</li>
-                <li>And another one which contains the earnings results as soon as they're out.</li>
-              </strong>
+                <li>And another one which contains the earnings results as soon as they're out.*</li>
+              </div>
             </ol>
           </div>
-          <h2>Do I have to pay?</h2>
-          <p>Yes. To sign up, fill out and submit the form below:</p>
-          <h3>Put your email address below</h3>
+          <h3>Do I have to pay? What happens if I don't pay?</h3>
+          <p>Yes. If you don't pay, your form submission will be stored in our database, but you won't receive any emails. To sign up, first <span className="Pay">fill out and submit the form below:</span></p>
+          <h3>Are you storing my raw credit card numbers in your database? Your shitty website with almost no CSS is not giving me any confidence.</h3>
+          <p>No. Your data is handled by <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">Stripe</a>.</p>
           <form method="POST" action="">
-            <input type="text" value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
-            <h3>And add all the stocks you want to subscribe to below</h3>
-            Tickers: {JSON.stringify(tickers)}
-            <input type="text" value={tickerInput} onChange={(e) => setTickerInput(e.target.value)}></input>
+            <div style={{ padding: '10px 0px' }}>
+              <label for="email">Email address: </label>
+              <input name="email" type="text" value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
+            </div>
+            <div style={{ padding: '10px 0px' }}>
+              Tickers you want to subscribe to: {JSON.stringify(tickers)}
+              <div>
+                <input type="text" value={tickerInput} onChange={(e) => setTickerInput(e.target.value)}></input>
+              </div>
+            </div>
             <button type="button" style={{ marginLeft: '5px' }} onClick={addTicker}>Add</button>
             <br />
             <br />
             <br />
-            <div>
+            <div style={{ padding: '10px 0px' }}>
               <button type="button" onClick={submitForm}>Submit</button>
             </div>
+            <p>And then <span className="Pay">subscribe below</span> (2 months free if you pick yearly):</p>
             <stripe-pricing-table pricing-table-id="prctbl_1MSpmvL3EFqQagpsripMsRzT"
               publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
             </stripe-pricing-table>
@@ -82,14 +90,14 @@ function App() {
       </div>
       <div className="Footer">
         <div>
-          Built in Toronto by&nbsp;<a href="https://www.northpnd.com" target="_blank" rel="noopener">North P&D</a>
+          Built in Toronto by&nbsp;<a className="FooterLink" href="https://www.northpnd.com" target="_blank" rel="noopener">North P&D</a>
         </div>
         <br />
         <div>
-          <a style={{ padding: '0px 10px' }} href="/privacy.html">Privacy</a><a style={{ padding: '0px 10px' }} href="/disclaimers.html">Disclaimers</a><a style={{ padding: '0px 10px' }} href="/contact.html">Contact</a>
+          <a className="FooterLink" style={{ padding: '0px 10px' }} href="/privacy.html">Privacy</a><a className="FooterLink" style={{ padding: '0px 10px' }} href="/disclaimers.html">* Disclaimers</a><a className="FooterLink" style={{ padding: '0px 10px' }} href="/contact.html">Contact</a>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
