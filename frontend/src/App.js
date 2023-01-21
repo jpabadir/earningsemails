@@ -85,6 +85,7 @@ function App() {
             <stripe-pricing-table pricing-table-id="prctbl_1MSpmvL3EFqQagpsripMsRzT"
               publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
             </stripe-pricing-table>
+            <p>All prices in USD</p>
           </form>
         </div>
       </div>
