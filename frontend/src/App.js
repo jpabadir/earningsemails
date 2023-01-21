@@ -59,9 +59,8 @@ function App() {
               </strong>
             </ol>
           </div>
-          <h2>How does it work?</h2>
           <h2>Do I have to pay?</h2>
-          <p>Yes. To sign up, </p>
+          <p>Yes. To sign up, fill out and submit the form below:</p>
           <h3>Put your email address below</h3>
           <form method="POST" action="">
             <input type="text" value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
@@ -72,14 +71,12 @@ function App() {
             <br />
             <br />
             <br />
-            <h3>Subscribe</h3>
-            <stripe-pricing-table pricing-table-id="prctbl_1MSpmvL3EFqQagpsripMsRzT"
-              publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
-            </stripe-pricing-table>
-            <h3>And then submit using the button below.</h3>
             <div>
               <button type="button" onClick={submitForm}>Submit</button>
             </div>
+            <stripe-pricing-table pricing-table-id="prctbl_1MSpmvL3EFqQagpsripMsRzT"
+              publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
+            </stripe-pricing-table>
           </form>
         </div>
       </div>
