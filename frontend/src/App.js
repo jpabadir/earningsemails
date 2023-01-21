@@ -40,13 +40,7 @@ function App() {
     setEmailInput("");
     setTickers([]);
 
-    toast("Ok congrats thanks, you're subscribed!")
-    setTimeout(function () {
-      toast("You like these little popup messages huh, don't you? I know, I know you do. It's ok.")
-    }, 2500);
-    setTimeout(function () {
-      toast("Here's one more just for you 😘")
-    }, 6000);
+    toast("Your info has been submitted! Make sure you also pay otherwise you won't be subscribed and we won't send you any emails.")
   }
 
   return (
@@ -66,6 +60,8 @@ function App() {
             </ol>
           </div>
           <h2>How does it work?</h2>
+          <h2>Do I have to pay?</h2>
+          <p>Yes. To sign up, </p>
           <h3>Put your email address below</h3>
           <form method="POST" action="">
             <input type="text" value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
@@ -76,6 +72,10 @@ function App() {
             <br />
             <br />
             <br />
+            <h3>Subscribe</h3>
+            <stripe-pricing-table pricing-table-id="prctbl_1MSpmvL3EFqQagpsripMsRzT"
+              publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
+            </stripe-pricing-table>
             <h3>And then submit using the button below.</h3>
             <div>
               <button type="button" onClick={submitForm}>Submit</button>
@@ -83,9 +83,20 @@ function App() {
           </form>
         </div>
       </div>
-      <div className="Footer"><a href="/privacy.html">Privacy</a><a href="/disclaimers.html">Disclaimers</a></div>
+      <div className="Footer">
+        <div>
+          Built in Toronto by&nbsp;<a href="https://www.northpnd.com" target="_blank" rel="noopener">North P&D</a>
+        </div>
+        <br />
+        <div>
+          <a style={{ padding: '0px 10px' }} href="/privacy.html">Privacy</a><a style={{ padding: '0px 10px' }} href="/disclaimers.html">Disclaimers</a><a style={{ padding: '0px 10px' }} href="/contact.html">Contact</a>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
+
