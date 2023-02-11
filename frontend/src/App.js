@@ -90,6 +90,7 @@ function App() {
               publishable-key="pk_live_51MQZcwL3EFqQagpskkFLRQDlJAzJ6pzbKWjP45WUcakxhfJ2ImqKd0F6dfNo0dWP642He8pWizBPgDPMeg8dK5fw00nfoKNfB5">
             </stripe-pricing-table>
             <p>All prices in USD</p>
+            <p>60 days money back guarantee. Email me and I'll give you a refund, no questions asked.</p>
           </form>
         </div>
       </div>
