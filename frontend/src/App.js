@@ -63,8 +63,6 @@ function App() {
               </div>
             </ol>
           </div>
-          <h3>Are you storing my raw credit card numbers in your database? Your shitty website with almost no CSS is not giving me any confidence.</h3>
-          <p>No. Your data is handled by <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">Stripe</a>.</p>
           <h3>Do I have to pay? What happens if I don't pay?</h3>
           <p>Yes. If you don't pay, your form submission will be stored in our database, but you won't receive any emails. To sign up, first <span className="Pay">fill out and submit the form below:</span></p>
           <form method="POST" action="">
